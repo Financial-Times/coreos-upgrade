@@ -14,7 +14,7 @@ sleep 120
 
 if update_engine_client -status | grep $rebootflag;
 then
-echo -n "etcd is "
+    echo -n "etcd is "
     if systemctl is-active etcd;
     then
         echo "Update reboot with locksmithctl."
@@ -24,7 +24,9 @@ echo -n "etcd is "
         sleep $delay
         reboot
     fi
+else
+    echo "No reboot flag: [$rebootflag] found"
 fi
-echo "No reboot flag: [$rebootflag] found"
+
 exit 0
 
