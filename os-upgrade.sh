@@ -2,9 +2,6 @@
 
 # DO NOT MOVE THIS FILE. IT GETS PULLED FROM RAW GITHUB LOCATION
 
-# Start update-engine
-#systemctl start update-engine.service
-
 # Check for updates
 update_engine_client -check_for_update
 
@@ -28,5 +25,6 @@ echo -n "etcd is "
         reboot
     fi
 fi
+echo "No reboot flag: [$rebootflag] found"
 exit 0
 
