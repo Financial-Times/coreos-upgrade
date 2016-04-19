@@ -2,6 +2,9 @@
 
 # DO NOT MOVE THIS FILE. IT GETS PULLED FROM RAW GITHUB LOCATION
 
+# Stop serving read requests (aggregate-healthchck to return unhealthy on `__gtg` calls
+etcdctl set /ft/healthcheck-categories/read/enabled false
+
 # Check for updates
 update_engine_client -check_for_update
 
