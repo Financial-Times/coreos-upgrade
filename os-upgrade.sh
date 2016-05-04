@@ -12,8 +12,8 @@ update_engine_client -check_for_update
 delay=`/usr/bin/expr $RANDOM % 600`
 rebootflag='NEED_REBOOT'
 
-# Sleep 120S waiting for download
-sleep 120
+# Sleep 240S waiting for download
+sleep 240
 
 if update_engine_client -status | grep $rebootflag;
 then
