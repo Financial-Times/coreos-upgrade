@@ -2,6 +2,9 @@
 
 # DO NOT MOVE THIS FILE. IT GETS PULLED FROM RAW GITHUB LOCATION
 
+# Stop deployer, currently stops the upgrade service when its sleeping
+fleetctl stop deployer.service
+
 # Stop serving read requests (aggregate-healthchck to return unhealthy on `__gtg` calls
 etcdctl set /ft/healthcheck-categories/read/enabled false
 
